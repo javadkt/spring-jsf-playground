@@ -17,12 +17,12 @@
         <div style="clear:both; padding-top: 10px;"></div> <!-- Add padding to create space -->
 
 
-        <h:selectOneMenu value="#{helloBean.selectedDepartment}">
-            <f:selectItem itemValue="HR" itemLabel="HR" />
-            <f:selectItem itemValue="IT" itemLabel="IT" />
-            <f:selectItem itemValue="FINANCE" itemLabel="FINANCE" />
+        <h:selectOneMenu value="#{helloBean.departmentId}">
+            <f:selectItems value="#{helloBean.departments}" var="dept" itemLabel="#{dept.name}"
+                   itemValue="#{dept.id}" />
         </h:selectOneMenu>
-        <h:commandButton value="Submit" action="#{helloBean.printSelectedDepartment}" />
+        <h:commandButton value="Submit" action="#{helloBean.printSelectedDepartment}"/>
+
 
     </h:form>
 
